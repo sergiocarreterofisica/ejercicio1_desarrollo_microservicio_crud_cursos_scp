@@ -58,4 +58,9 @@ public class CursoController {
 		return cursosService.getCursosByPrecioRange(precioMin, precioMax);
 	}
 
+	@GetMapping(value = "/nombre/{nombre}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public Curso buscarCursoPorNombre(@PathVariable String nombre) {
+		return cursosService.findByNombre(nombre);
+	}
+
 }

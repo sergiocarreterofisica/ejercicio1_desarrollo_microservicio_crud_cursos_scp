@@ -18,4 +18,6 @@ public interface CursosService {
 
 	List<Curso> getCursosByPrecioRange(Double precioMinimo, Double precioMaximo);
 
+	Curso findByNombre(String nombre);
+
 }

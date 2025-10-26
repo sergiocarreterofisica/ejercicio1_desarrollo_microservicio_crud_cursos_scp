@@ -45,12 +45,18 @@ public class CursosServiceImpl implements CursosService {
 
 	@Override
 	public Curso getCurso(String codCurso) {
+
 		return cursosDao.findById(codCurso).orElse(null);
 	}
 
 	@Override
 	public List<Curso> getCursosByPrecioRange(Double precioMinimo, Double precioMaximo) {
 		return cursosDao.findByPrecioBetween(precioMinimo, precioMaximo);
+	}
+
+	@Override
+	public Curso findByNombre(String nombre) {
+		return cursosDao.findByNombre(nombre);
 	}
 
 }
